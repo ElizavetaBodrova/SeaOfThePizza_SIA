@@ -1,0 +1,56 @@
+#headerMain{
+    width: 1080px;
+    height:150px;
+    margin:0px auto;
+    z-index: 0;
+}
+#header{
+    width: 1080px;
+    height: 150px;
+    background: #FFFFFF;
+    position:fixed;
+    z-index: 9999;
+
+}
+
+#phone{
+    background: grey;
+    color:white;
+}
+.buttonOrder{
+    color: #FFFFFF; /* цвет текста */
+    text-decoration: none; /* убирать подчёркивание у ссылок */
+    user-select: none; /* убирать выделение текста */
+    background:#1959d1; /* фон кнопки *!*!*/
+    padding: 1.9em; /*1.5em; /* отступ от текста */
+    outline: none; /* убирать контур в Mozilla */
+    position: relative;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: 900;
+    border-radius: 10px;
+
+
+}
+.button  {
+    color: grey; /* цвет текста */
+    text-decoration: none; /* убирать подчёркивание у ссылок */
+    user-select: none; /* убирать выделение текста */
+    background:#FFFFFF; /* фон кнопки *!*!*/
+    padding: 1em; /*1.5em; /* отступ от текста */
+    margin: 0.4em;
+    position: relative;
+    display: inline-block;
+    font-size: 110%;
+    font-weight: 900;
+    border: 0;
+
+}
+.footer{
+    background: #1959d1;
+    color: #efe5d0;
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    font-size: 90%;
+}
