@@ -3,6 +3,7 @@
 <html lang="ru-RU">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/pizza.png">
     <title>🍕Море пиццы🍕</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css"/>
@@ -18,22 +19,75 @@
         </div>
 
         <div class="row">
-            <div style = "width: 50px; height: 55px"></div>
+            <div style = "width: 53px; height: 55px"></div>
             <div class="col-md-3"><h1>Море Пиццы</h1></div>
-            <div class="col-md-1.5"><input class="button"type="button" value="Пицца" onclick="location.href='index.html'"></div>
-            <div class="col-md-1.5"><input class="button"type="button" value="Закуски" onclick="location.href='school.html'"></div>
-            <div class="col-md-1.5"> <input class="button"type="button" value="Напитки" onclick="location.href='coffeetable.html'"></div>
+            <div class="col-md-1.5"><input class="button"type="button" value="Пицца" onclick="location.href='index.html#pizza'"></div>
+            <div class="col-md-1.5"><input class="button"type="button" value="Закуски" onclick="location.href='index.html#snack'"></div>
+            <div class="col-md-1.5"> <input class="button"type="button" value="Напитки" onclick="location.href='index.html#drink'"></div>
             <div class="col-md-2.5"><div style = "width: 200px; height: 15px"></div> </div>
 
-            <div class="col-md-5.5"> <input class="buttonOrder"type="button" value="Корзина" onclick="location.href='coffeetable.html'"></div>
+            <div class="col-md-5.5"> <input class="buttonOrder"type="button" value="Корзина" onclick="location.href='order.jsp'"></div>
 
         </div>
     </div>
 
 
 </div>
-<div>Picture</div>
-<div class="container-fluid">Container</div>
+
+<div class="container-fluid">
+    <div class="row"><div class="col-md-1.5" style = "width: 30px; height: 55px"></div><img class="col-md-1.5" src="img/pizzaPattern_cut-photo.ru.png" width="95%"></div>
+    <div class="row"id="pizza"><div style="height: 50px"></div></div>
+    <div class="row" style="background: #1959d1"><h1 class="centerh" style="color: white">Пиццы</h1></div>
+    <div class="row"><div style="height: 50px"></div></div>
+    <div class="row">
+        <div class="col-md-4" >
+            <h1 class="centerh">Peperoni</h1>
+            <img src="img/pizza/peperoni.jpg"style = "width: 90%">
+            <p class="centerh">Opisanie</p>
+            <input class="buttonOrder"type="button" value="Корзина" onclick="">
+        </div>
+        <div class="col-md-4"><img src="img/pizza/4cheese.jpg"style = "width: 90%"></div>
+        <div class="col-md-4"><img src="img/pizza/barbeku.jpg"style = "width: 90%"></div>
+        <div class="col-md-4"><img src="img/pizza/grib.jpg"style = "width: 90%"></div>
+        <div class="col-md-4"><img src="img/pizza/gawaii.jpg"style = "width:90%"></div>
+    </div>
+
+    <div class="row"><div style="height: 50px"></div></div>
+    <div class="row"style="background: #1959d1"><h1 class="centerh"style="color: white">Соусы</h1></div>
+    <div class="row"><div style="height: 50px"></div></div>
+    <div class="row">
+
+        <div class="col-md-4"> <img src="img/souce/barbeku.jpg"style = "width:90%"></div>
+        <div class="col-md-4"><img src="img/souce/cheese.jpg"style = "width:90%"></div>
+        <div class="col-md-4"> <img src="img/souce/ketchup.jpg"style = "width:90%"></div>
+        <div class="col-md-4"><img src="img/souce/saltsweet.jpg"style = "width:90%"></div>
+
+    </div>
+
+    <div class="row" id="snack"><div style="height: 50px"></div></div>
+    <div class="row"style="background: #1959d1"><h1 class="centerh"style="color: white">Снеки</h1></div>
+    <div class="row"><div style="height: 50px"></div></div>
+    <div class="row">
+        <div class="col-md-4"><img src="img/snacks/country.jpg"style = "width:90%"></div>
+        <div class="col-md-4"><img src="img/snacks/fri.jpg"style = "width:90%"></div>
+        <div class="col-md-4"><img src="img/snacks/wingsBBQ.jpg"style = "width:90%"></div>
+    </div>
+
+    <div class="row" id="drink"><div style="height: 50px"></div></div>
+    <div class="row"style="background: #1959d1"><h1 class="centerh"style="color: white">Напитки</h1></div>
+    <div class="row"><div style="height: 50px"></div></div>
+    <div class="row">
+        <div class="col-md-4"><img src="img/drink/cocacola.jpg"style = "width:90%"></div>
+        <div class="col-md-4"><img src="img/drink/sprite.jpg"style = "width:90%"></div>
+        <div class="col-md-4"><img src="img/drink/water.jpg"style = "width:90%"></div>
+
+    </div>
+
+    <div class="row"><div style="height: 50px"></div></div>
+</div>
+
+
+
 <div class="footer">  &nbsp;Moре пиццы ©
     <br></br>2020
 </div>
