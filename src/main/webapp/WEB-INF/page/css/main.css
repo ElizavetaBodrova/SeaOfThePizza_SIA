@@ -17,6 +17,21 @@
     background: grey;
     color:white;
 }
+
+a{
+    color:black;
+    text-decoration: none;
+    /*
+    user-select: none;
+    */
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #1959d1;
+}
+
 .buttonOrder{
     color: #FFFFFF; /* цвет текста */
     text-decoration: none; /* убирать подчёркивание у ссылок */
@@ -46,6 +61,13 @@
     border: 0;
 
 }
+
+.button:hover,
+.button:focus {
+    text-decoration: none;
+    color: #1959d1;
+}
+
 .footer{
     background: #1959d1;
     color: #efe5d0;
@@ -58,4 +80,8 @@
     margin: 0px auto;
    /* background: #1959d1;*/
 
+}
+
+.centerContent{
+    margin-left: 20%;
 }
