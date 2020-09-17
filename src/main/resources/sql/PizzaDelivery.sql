@@ -1,5 +1,5 @@
 CREATE TABLE "GROUPS_DISH" (
-	"ID" serial NOT NULL,
+	"ID" numeric NOT NULL,
 	"Name" varchar(255) NOT NULL,
 	CONSTRAINT "GROUPS_DISH_pk" PRIMARY KEY ("ID")
 ) WITH (
@@ -9,7 +9,7 @@ CREATE TABLE "GROUPS_DISH" (
 
 
 CREATE TABLE "DISH" (
-	"ID" serial NOT NULL,
+	"ID" numeric NOT NULL,
 	"Name" varchar(255) NOT NULL,
 	"Price" integer NOT NULL,
 	"ID_group" integer NOT NULL,
@@ -21,8 +21,8 @@ CREATE TABLE "DISH" (
 
 
 CREATE TABLE "ORDER_DISH" (
-	"ID_order" integer NOT NULL,
-	"ID_dish" integer NOT NULL,
+	"ID_order" numeric NOT NULL,
+	"ID_dish" numeric NOT NULL,
 	"Count" integer NOT NULL
 ) WITH (
   OIDS=FALSE
@@ -31,8 +31,8 @@ CREATE TABLE "ORDER_DISH" (
 
 
 CREATE TABLE "ORDER" (
-	"ID" serial NOT NULL,
-	"Phone_client" varchar(255) NOT NULL,
+	"ID" numeric NOT NULL,
+	"Phone_client" varchar(10) NOT NULL,
 	"ID_type" integer NOT NULL,
 	"ID_point" integer NOT NULL,
 	CONSTRAINT "ORDER_pk" PRIMARY KEY ("ID")
@@ -43,7 +43,7 @@ CREATE TABLE "ORDER" (
 
 
 CREATE TABLE "TYPE_DELIVERY" (
-	"ID" serial NOT NULL,
+	"ID" numeric NOT NULL,
 	"Name" varchar(255) NOT NULL,
 	CONSTRAINT "TYPE_DELIVERY_pk" PRIMARY KEY ("ID")
 ) WITH (
@@ -53,10 +53,9 @@ CREATE TABLE "TYPE_DELIVERY" (
 
 
 CREATE TABLE "FEEDBACK" (
-	"ID" serial NOT NULL,
-	"ID_point" integer NOT NULL,
+	"ID" numeric NOT NULL,
+	"ID_order" numeric NOT NULL,
 	"Mark" integer NOT NULL,
-	"Phone_client" varchar(255) NOT NULL,
 	"Comment" varchar(255) NOT NULL,
 	CONSTRAINT "FEEDBACK_pk" PRIMARY KEY ("ID")
 ) WITH (
@@ -66,10 +65,9 @@ CREATE TABLE "FEEDBACK" (
 
 
 CREATE TABLE "POINT" (
-	"ID" serial NOT NULL,
-	Address serial NOT NULL,
-	"Max_number_order" integer NOT NULL,
-	"Phone" integer NOT NULL,
+	"ID" numeric NOT NULL,
+	"Adress" varchar(255) NOT NULL,
+	"Phone" varchar(10) NOT NULL,
 	CONSTRAINT "POINT_pk" PRIMARY KEY ("ID")
 ) WITH (
   OIDS=FALSE
@@ -87,6 +85,6 @@ ALTER TABLE "ORDER" ADD CONSTRAINT "ORDER_fk0" FOREIGN KEY ("ID_type") REFERENCE
 ALTER TABLE "ORDER" ADD CONSTRAINT "ORDER_fk1" FOREIGN KEY ("ID_point") REFERENCES "POINT"("ID");
 
 
-ALTER TABLE "FEEDBACK" ADD CONSTRAINT "FEEDBACK_fk0" FOREIGN KEY ("ID_point") REFERENCES "ORDER"("ID");
+ALTER TABLE "FEEDBACK" ADD CONSTRAINT "FEEDBACK_fk0" FOREIGN KEY ("ID_order") REFERENCES "ORDER"("ID");
 
 
