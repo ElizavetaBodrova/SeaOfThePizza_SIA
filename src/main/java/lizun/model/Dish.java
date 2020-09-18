@@ -15,6 +15,16 @@ public class Dish {
     String name;
     @Column(name="Price")
     Integer price;
+    @Column(name="ID_group")
+    Integer group;
+
+    public Integer getGroup() {
+        return group;
+    }
+
+    public void setGroup(Integer group) {
+        this.group = group;
+    }
 
     public Integer getId() {
         return id;
