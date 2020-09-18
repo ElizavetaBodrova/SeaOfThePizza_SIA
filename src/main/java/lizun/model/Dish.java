@@ -3,7 +3,7 @@ package lizun.model;
 import javax.persistence.*;
 
 
-@Entity
+
 @Table(name="DISH")
 public class Dish {
 
@@ -15,14 +15,14 @@ public class Dish {
     String name;
     @Column(name="Price")
     Integer price;
-    @Column(name="ID_group")
-    Integer group;
+    @Column(name = "ID_group")
+    TypeOfDish group;
 
-    public Integer getGroup() {
+    public TypeOfDish getGroup() {
         return group;
     }
 
-    public void setGroup(Integer group) {
+    public void setGroup(TypeOfDish group) {
         this.group = group;
     }
 
