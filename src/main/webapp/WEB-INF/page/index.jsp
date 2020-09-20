@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <html lang="ru-RU">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +20,13 @@
 
         <div class="row">
             <div style = "width: 53px; height: 55px"></div>
-            <div class="col-md-3"><h1><a href="index.html" >Море Пиццы</a></h1></div>
+            <div class="col-md-3"><h1><a href="index.jsp" >Море Пиццы</a></h1></div>
             <div class="col-md-1.5"><input class="button"type="button" value="Пицца" onclick="location.href='index.html#pizza'"></div>
             <div class="col-md-1.5"><input class="button"type="button" value="Закуски" onclick="location.href='index.html#snack'"></div>
             <div class="col-md-1.5"> <input class="button"type="button" value="Напитки" onclick="location.href='index.html#drink'"></div>
             <div class="col-md-2.5"><div style = "width: 200px; height: 15px"></div> </div>
 
-            <div class="col-md-5.5"> <input class="buttonOrder"type="button" value="Корзина" onclick="location.href='order.html'"></div>
+            <div class="col-md-5.5"> <input class="buttonOrder"type="button" value="Корзина" onclick="location.href='order.jsp'"></div>
 
         </div>
     </div>
