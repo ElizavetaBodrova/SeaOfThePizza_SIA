@@ -1,0 +1,25 @@
+package lizun.dao;
+
+import lizun.model.Dish;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DishRepositoryTest {
+
+    @Autowired
+    private DishRepository dishRepository;
+
+    @Test
+    public void testSaveDish() {
+        Dish dish = Dish.builder()
+                .name("Сыр")
+                .price(10000000)
+                .build();
+        dishRepository.save(dish);
+    }
+}
