@@ -1,6 +1,7 @@
 package lizun.dao;
 
 import lizun.model.Dish;
+import lizun.repository.DishRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,6 @@ public class DishRepositoryTest {
 
     @Test
     public void testSaveDish() {
-        Dish dish = Dish.builder()
-                .name("Сыр")
-                .price(10000000)
-                .build();
-        dishRepository.save(dish);
+
     }
 }

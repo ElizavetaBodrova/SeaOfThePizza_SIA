@@ -1,4 +1,4 @@
-package lizun.dao;
+package lizun.repository;
 
 import lizun.model.Dish;
 import org.springframework.data.repository.CrudRepository;

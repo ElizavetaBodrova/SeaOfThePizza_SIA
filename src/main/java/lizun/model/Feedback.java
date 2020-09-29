@@ -8,13 +8,13 @@ public class Feedback {
 
     @Id
     @Column(name="ID")
-    Integer id;
+    private Integer id;
     @Column(name="ID_order")
-    Order order;
+    private  Order order;
     @Column(name="Mark")
-    Integer mark;
+    private Integer mark;
     @Column(name="Comment")
-    String comment;
+    private String comment;
 
     public Integer getId() {
         return id;

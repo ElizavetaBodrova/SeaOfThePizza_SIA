@@ -16,7 +16,7 @@ public class TypeOfDelivery {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+      private Integer id;
     @Column(name="Name")
     private String name;
 

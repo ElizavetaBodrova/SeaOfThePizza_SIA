@@ -14,7 +14,7 @@ public class TypeOfDish {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
     @Column(name="Name")
-    String name;
+    private String name;
 }

@@ -12,13 +12,13 @@ public class Order {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
     @Column(name="Phone_client")
-    String phone;
+    private String phone;
     @Column(name="ID_point")
-    TypeOfDelivery type;
+    private TypeOfDelivery type;
     @Column(name="ID_type")
-    Point point;
+    private Point point;
 
     public Integer getId() {
         return id;
