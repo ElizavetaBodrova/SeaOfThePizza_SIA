@@ -43,35 +43,35 @@
         <div class="col-md-4" >
             <div style="height:50px;"></div>
             <h1 class="centerContent">Пепперони</h1>
-            <img src="img/pizza/peperoni.jpg"style = "width: 90%">
+            <img src="img/pizza/peperoni.jpg" style = "width: 90%">
             <p class="centerContent">Колбаски Пепперони, сыр Моцарелла, пицца-соус</p>
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">4 сыра</h1>
-            <img src="img/pizza/4cheese.jpg"style = "width: 90%">
+            <img src="img/pizza/4cheese.jpg" style = "width: 90%">
             <p class="centerContent">Сыр Чеддер, сыр Дор блю, сыр Фета, сыр Моцарелла, сырный соус</p>
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Барбекю</h1>
-            <img src="img/pizza/barbeku.jpg"style = "width: 90%">
+            <img src="img/pizza/barbeku.jpg" style = "width: 90%">
             <p class="centerContent">Колбаски Пепперони, бекон, говядина, карамелизированный лук, сыр Моцарелла, соус Барбекю</p>
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Грибная</h1>
-            <img src="img/pizza/grib.jpg"style = "width: 90%">
+            <img src="img/pizza/grib.jpg" style = "width: 90%">
             <p class="centerContent">Ветчина, шампиньоны, сыр Моцарелла, соус Бешамель</p>
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Гавайская</h1>
-            <img src="img/pizza/gawaii.jpg"style = "width:90%">
+            <img src="img/pizza/gawaii.jpg" style = "width:90%">
             <p class="centerContent">Ветчина, ананасы, сыр Моцарелла, пицца-соус</p>
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
         </div>
@@ -85,27 +85,27 @@
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Соус Барбекью</h1>
-            <img src="img/souce/barbeku.jpg"style = "width:90%">
+            <img src="img/souce/barbeku.jpg" style = "width:90%">
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
 
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Сырный соус</h1>
-            <img src="img/souce/cheese.jpg"style = "width:90%">
+            <img src="img/souce/cheese.jpg" style = "width:90%">
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
 
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Кетчуп</h1>
-            <img src="img/souce/ketchup.jpg"style = "width:90%">
+            <img src="img/souce/ketchup.jpg" style = "width:90%">
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Кисло-сладкий соус</h1>
-            <img src="img/souce/saltsweet.jpg"style = "width:90%">
+            <img src="img/souce/saltsweet.jpg" style = "width:90%">
             <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
         </div>
 
@@ -118,21 +118,21 @@
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Картофель по-деревенски</h1>
-            <img src="img/snacks/country.jpg"style = "width:90%">
+            <img src="img/snacks/country.jpg" style = "width:90%">
             <p class="centerContent">Ароматный запеченый картофель со специями. Вес: 140 г</p>
             <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Картофель фри</h1>
-            <img src="img/snacks/fri.jpg"style = "width:90%">
+            <img src="img/snacks/fri.jpg" style = "width:90%">
             <p class="centerContent">Вкусные, слегка посоленные палочки картофеля с аппетитно хрустящей корочкой. Вес: 140 г</p>
             <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Крылья BBQ</h1>
-            <img src="img/snacks/wingsBBQ.jpg"style = "width:90%">
+            <img src="img/snacks/wingsBBQ.jpg" style = "width:90%">
             <p class="centerContent">Запеченные куриные крылья в маринаде из соуса барбекю. 4 шт.</p>
             <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
         </div>
@@ -145,19 +145,19 @@
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Coca-Cola 0,9л</h1>
-            <img src="img/drink/cocacola.jpg"style = "width:90%">
+            <img src="img/drink/cocacola.jpg" style = "width:90%">
             <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Sprite 0,5л</h1>
-            <img src="img/drink/sprite.jpg"style = "width:90%">
+            <img src="img/drink/sprite.jpg" style = "width:90%">
             <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">BonAqua негазированная 0,5л</h1>
-            <img src="img/drink/water.jpg"style = "width:90%">
+            <img src="img/drink/water.jpg" style = "width:90%">
             <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
         </div>
 

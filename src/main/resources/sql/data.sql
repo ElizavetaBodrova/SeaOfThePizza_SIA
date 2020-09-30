@@ -1,17 +1,17 @@
 INSERT INTO GROUPS_DISH(NAME)
 VALUES ('Пицца'),
-       ('Напитки'),
-       ('Роллы');
+        ('Соус'),
+        ('Снек'),
+       ('Напиток');
+
 
 INSERT INTO POINT(ADRESS, PHONE)
-VALUES ('Станкевича 4', '8005553535'),
+VALUES ('Станкевича 3', '8005553535'),
        ('Хользунова 50', '8005553535');
 
 INSERT INTO TYPE_DELIVERY(NAME)
 VALUES ('Самовывоз'),
-       ('Пешим курьером'),
-       ('Машиной'),
-       ('Вертолётом'),
+       ('Курьером'),
        ('Телепортация');
 
 INSERT INTO DISH(NAME, PRICE, ID_GROUP)
