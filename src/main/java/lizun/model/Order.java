@@ -2,10 +2,7 @@ package lizun.model;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name="ORDER")
 public class Order {
@@ -15,8 +12,10 @@ public class Order {
     private Integer id;
     @Column(name="Phone_client")
     private String phone;
+    @ManyToOne
     @Column(name="ID_point")
     private TypeOfDelivery type;
+    @ManyToOne
     @Column(name="ID_type")
     private Point point;
 

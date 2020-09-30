@@ -9,6 +9,7 @@ public class Feedback {
     @Id
     @Column(name="ID")
     private Integer id;
+    @ManyToOne
     @Column(name="ID_order")
     private  Order order;
     @Column(name="Mark")
