@@ -2,23 +2,21 @@ package lizun.model;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name="ORDER")
 public class Order {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
     @Column(name="Phone_client")
-    String phone;
+    private String phone;
+    @ManyToOne
     @Column(name="ID_point")
-    TypeOfDelivery type;
+    private  TypeOfDelivery type;
     @Column(name="ID_type")
-    Point point;
+    private Point point;
 
     public Integer getId() {
         return id;

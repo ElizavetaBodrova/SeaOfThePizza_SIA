@@ -20,8 +20,8 @@
 
         <div class="row">
             <div style = "width: 53px; height: 55px"></div>
-            <div class="col-md-3"><h1><a href="index.jsp" >Море Пиццы</a></h1></div>
-            <div class="col-md-1.5"><input class="button"type="button" value="Пицца" onclick="location.href='index.jsp#pizza'"></div>
+            <div class="col-md-3"><h1><a href="<c:url value="WEB-INF/page/index.jsp"/>" >Море Пиццы</a></h1></div>
+            <div class="col-md-1.5"><input class="button"type="button" value="Пицца" onclick=""></div><!--добавить привязку по тегу/ add tags -->
             <div class="col-md-1.5"><input class="button"type="button" value="Закуски" onclick="location.href='index.jsp#snack'"></div>
             <div class="col-md-1.5"> <input class="button"type="button" value="Напитки" onclick="location.href='index.jsp#drink'"></div>
             <div class="col-md-2.5"><div style = "width: 200px; height: 15px"></div> </div>
@@ -45,36 +45,32 @@
             <h1 class="centerContent">Пепперони</h1>
             <img src="${pageContext.request.contextPath}/img/pizza/peperoni.jpg" alt="image" style = "width: 90%">
             <p class="centerContent">Колбаски Пепперони, сыр Моцарелла, пицца-соус</p>
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
+            <div class="row"><h1 class="centerContent">395₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">4 сыра</h1>
             <img src="${pageContext.request.contextPath}/img/pizza/4cheese.jpg" style = "width: 90%">
             <p class="centerContent">Сыр Чеддер, сыр Дор блю, сыр Фета, сыр Моцарелла, сырный соус</p>
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">415₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Барбекю</h1>
             <img src="${pageContext.request.contextPath}/img/pizza/barbeku.jpg" style = "width: 90%">
             <p class="centerContent">Колбаски Пепперони, бекон, говядина, карамелизированный лук, сыр Моцарелла, соус Барбекю</p>
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">415₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Грибная</h1>
             <img src="${pageContext.request.contextPath}/img/pizza/grib.jpg" style = "width: 90%">
             <p class="centerContent">Ветчина, шампиньоны, сыр Моцарелла, соус Бешамель</p>
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">395₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Гавайская</h1>
             <img src="${pageContext.request.contextPath}/img/pizza/gawaii.jpg" style = "width:90%">
             <p class="centerContent">Ветчина, ананасы, сыр Моцарелла, пицца-соус</p>
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">345₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
     </div>
 
     <div class="row"><div style="height: 50px"></div></div>
@@ -86,28 +82,24 @@
             <div style="height:50px;"></div>
             <h1 class="centerContent">Соус Барбекью</h1>
             <img src="${pageContext.request.contextPath}/img/souce/barbeku.jpg" style = "width:90%">
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-
+            <div class="row"><h1 class="centerContent">20₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Сырный соус</h1>
             <img src="${pageContext.request.contextPath}/img/souce/cheese.jpg" style = "width:90%">
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-
+            <div class="row"><h1 class="centerContent">20₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>
         </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Кетчуп</h1>
             <img src="${pageContext.request.contextPath}/img/souce/ketchup.jpg" style = "width:90%">
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">20₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Кисло-сладкий соус</h1>
             <img src="${pageContext.request.contextPath}/img/souce/saltsweet.jpg" style = "width:90%">
-            <input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">20₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
 
     </div>
 
@@ -120,22 +112,19 @@
             <h1 class="centerContent">Картофель по-деревенски</h1>
             <img src="${pageContext.request.contextPath}/img/snacks/country.jpg" style = "width:90%">
             <p class="centerContent">Ароматный запеченый картофель со специями. Вес: 140 г</p>
-            <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">99₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Картофель фри</h1>
             <img src="${pageContext.request.contextPath}/img/snacks/fri.jpg" style = "width:90%">
             <p class="centerContent">Вкусные, слегка посоленные палочки картофеля с аппетитно хрустящей корочкой. Вес: 140 г</p>
-            <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">99₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Крылья BBQ</h1>
             <img src="${pageContext.request.contextPath}/img/snacks/wingsBBQ.jpg" style = "width:90%">
             <p class="centerContent">Запеченные куриные крылья в маринаде из соуса барбекю. 4 шт.</p>
-            <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">290₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
     </div>
 
     <div class="row" id="drink"><div style="height: 50px"></div></div>
@@ -146,20 +135,17 @@
             <div style="height:50px;"></div>
             <h1 class="centerContent">Coca-Cola 0,9л</h1>
             <img src="${pageContext.request.contextPath}/img/drink/cocacola.jpg" style = "width:90%">
-            <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">119₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
             <h1 class="centerContent">Sprite 0,5л</h1>
             <img src="${pageContext.request.contextPath}/img/drink/sprite.jpg" style = "width:90%">
-            <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">119₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
         <div class="col-md-4">
             <div style="height:50px;"></div>
-            <h1 class="centerContent">BonAqua негазированная 0,5л</h1>
+            <h1 class="centerContent">BonAqua 0,5л</h1>
             <img src="${pageContext.request.contextPath}/img/drink/water.jpg" style = "width:90%">
-            <input class="buttonOrder"type="button" value="Добавить в корзину" onclick="" style="margin-left: 15%;">
-        </div>
+            <div class="row"><h1 class="centerContent">59₽</h1><input class="buttonOrder"type="button" value="В корзину" onclick="" style="margin-left: 15%;"></div>        </div>
 
     </div>
 
