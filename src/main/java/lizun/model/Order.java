@@ -14,8 +14,7 @@ public class Order {
     private String phone;
     @ManyToOne
     @Column(name="ID_point")
-    private TypeOfDelivery type;
-    @ManyToOne
+    private  TypeOfDelivery type;
     @Column(name="ID_type")
     private Point point;
 

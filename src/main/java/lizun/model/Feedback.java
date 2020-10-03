@@ -11,7 +11,7 @@ public class Feedback {
     private Integer id;
     @ManyToOne
     @Column(name="ID_order")
-    private  Order order;
+    private Order order;
     @Column(name="Mark")
     private Integer mark;
     @Column(name="Comment")

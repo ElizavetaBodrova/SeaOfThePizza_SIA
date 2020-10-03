@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lizun.mappers.DishMapper">
+    <resultMap id="dish" type="lizun.model.Dish" autoMapping="true">
+        <association property="group"
+                     column="id_group"
+                     javaType="lizun.model.TypeOfDish" autoMapping="true">
+            <id property="id" column="GROUP_ID"/>
+            <result property="name" column="GROUP_NAME"/>
+        </association>
+    </resultMap>
+
+    <select id="getDishByGroupName" resultType="lizun.model.Dish">
+        SELECT D.id,
+               D.name,
+               D.price,
+               D.id_group,
+               GD.id AS GROUP_ID,
+               GD.name AS GROUP_NAME
+        FROM DISH D
+                 JOIN GROUPS_DISH GD ON GD.ID = D.ID_GROUP
+        WHERE GD.NAME = #{groupName}
+    </select>
+
+</mapper>

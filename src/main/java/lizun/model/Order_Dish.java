@@ -7,12 +7,11 @@ import javax.persistence.Table;
 @Table(name = "ORDER_DISH")
 public class Order_Dish {
     @ManyToMany
-    @Column(name = "ID_ORDER")
-    private Order order;
-    @ManyToMany
-    @Column(name = "ID_DISH")
+    @Column(name = "id_order")
+   private Order order;
+    @Column(name = "id_dish")
     private Dish dish;
-    @Column(name = "Count")
+    @Column(name = "count")
     private int count;
 
     public Order getOrder() {
