@@ -1,6 +1,7 @@
 package lizun.mappers;
 
 import lizun.model.Dish;
+import lizun.model.TypeOfDish;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -13,4 +14,6 @@ public interface DishMapper {
 //            "JOIN GROUPS_DISH GD ON GD.ID = DISH.ID_GROUP " +
 //            "WHERE GD.NAME = #{groupName}")
     List<Dish> getDishByGroupName(@Param("groupName") String groupName);
+
+
 }
