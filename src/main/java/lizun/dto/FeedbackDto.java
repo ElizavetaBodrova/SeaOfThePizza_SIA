@@ -3,8 +3,19 @@ package lizun.dto;
 import javax.persistence.Column;
 
 public class FeedbackDto {
+    private Integer order;
     private Integer mark;
     private String comment;
+
+    public Integer getOrder() {
+        return order;
+    }
+
+    public void setOrder(Integer order) {
+        this.order = order;
+    }
+
+
 
     public Integer getMark() {
         return mark;

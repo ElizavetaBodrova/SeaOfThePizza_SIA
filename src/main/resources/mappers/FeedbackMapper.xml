@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lizun.mappers.FeedbackMapper">
+
+
+    <select id="getFeedbacks" resultType="lizun.dto.FeedbackDto">
+        SELECT MARK , COMMENT
+        FROM FEEDBACK;
+    </select>
+
+    <parameterMap id="feedback" type="lizun.dto.FeedbackDto"></parameterMap>
+
+    <insert id="insertNew" parameterType="lizun.dto.FeedbackDto">
+        insert into feedback(id_order,mark,comment)
+        values(#{feedback.order},#{feedback.mark},#{feedback.comment});
+    </insert>
+
+</mapper>

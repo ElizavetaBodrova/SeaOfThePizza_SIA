@@ -73,6 +73,13 @@ CREATE TABLE POINT (
   OIDS=FALSE
 );
 
+Create Table CUSTOMER(
+    ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    Phone varchar(10) NOT NULL,
+    Password varchar(255) NOT NULL
+)WITH (
+  OIDS=FALSE
+);
 
 
 
