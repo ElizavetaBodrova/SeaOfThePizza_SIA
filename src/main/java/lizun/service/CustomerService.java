@@ -2,18 +2,33 @@ package lizun.service;
 
 import lizun.mappers.CustomerMapper;
 import lizun.model.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerService {
-    CustomerMapper customerMapper;
 
 
+    private CustomerMapper customerMapper;
 
+    public CustomerService(CustomerMapper customerMapper) {
+        this.customerMapper = customerMapper;
+    }
 
-    public void setNewCustomer(Customer customer){
-        System.out.println("service");
-        customerMapper.setNewCustomer(customer);
+    public boolean setNewCustomer(Customer customer) {
+
+        boolean state=false;
+        Customer existCostumer = customerMapper.getCustomerByPhone(customer.getPhone());
+        if (existCostumer != null) {
+            if(existCostumer.getPassword().equals(customer.getPassword()) ){
+                state=true;
+            }
+        } else {
+            customerMapper.setNewCustomer(customer);
+            state=true;
+        }
+        return state;
+
     }
 
 

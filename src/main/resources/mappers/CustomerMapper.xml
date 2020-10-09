@@ -10,4 +10,7 @@
 insert into customer(phone,password) values(#{customer.phone},#{customer.password})
 
 </insert>
+    <select id="getCustomerByPhone" resultType="lizun.model.Customer">
+        select * from customer where #{phone}=phone;
+    </select>
 </mapper>
