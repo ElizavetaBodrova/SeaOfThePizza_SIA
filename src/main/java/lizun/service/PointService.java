@@ -2,7 +2,7 @@ package lizun.service;
 
 import lizun.mappers.PointMapper;
 import lizun.model.Point;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,9 +18,6 @@ public class PointService {
 
     public List<Point> getAllPoints(){
         List<Point> points=pointMapper.getAllPoint();
-        for (int i = 0; i <2 ; i++) {
-            System.out.println(points.get(i).getAddress());
-        }
         return pointMapper.getAllPoint();
     }
 

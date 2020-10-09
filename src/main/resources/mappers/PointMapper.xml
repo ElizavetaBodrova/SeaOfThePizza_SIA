@@ -8,7 +8,7 @@
     </resultMap>
 
     <select id="getAllPoint" resultType="lizun.model.Point">
-        SELECT P.ADRESS,P.phone FROM POINT P;
+        SELECT P.ADRESS "address",P.phone "phone" FROM POINT P;
     </select>
 
 
