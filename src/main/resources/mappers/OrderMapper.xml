@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lizun.mappers.OrderMapper">
+
+    <select id="isOrderExist" resultType="lizun.model.Order">
+        select *
+        from "order" o
+
+        where o.id = #{id}
+          and o.phone_client = #{phone};
+    </select>
+
+    <resultMap id="order" type="lizun.dto.OrderDto"
+               autoMapping="true">
+        <collection property="order" ofType="lizun.model.Dish" autoMapping="true">
+            <result property="id" column="id"/>
+        </collection>
+        <collection property="numberOfDish" ofType="java.lang.Integer" autoMapping="true">
+
+        </collection>
+    </resultMap>
+    <select id="insertNewOrder" parameterType="lizun.dto.OrderDto" resultType="java.lang.Boolean">
+        insert into "order"(phone_client, id_type, id_point)
+        values(#{order.phone},#{order.typeOfDelivery.id},#{order.point.id});
+
+        insert into order_dish(id_order,id_dish,count)
+        values
+        <foreach item="instr" collection="order"  separator=",">
+            (
+            currval(pg_get_serial_sequence('order', 'id')),
+             #{order.order.id},
+             #{order.numberOfDish}
+            )
+        </foreach>;
+
+    </select>
+
+
+</mapper>

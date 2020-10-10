@@ -4,8 +4,17 @@ import javax.persistence.Column;
 
 public class FeedbackDto {
     private Integer order;
+    private String phone;
     private Integer mark;
     private String comment;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public Integer getOrder() {
         return order;

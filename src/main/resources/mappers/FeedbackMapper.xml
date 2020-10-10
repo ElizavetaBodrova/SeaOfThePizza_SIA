@@ -12,9 +12,10 @@
 
     <parameterMap id="feedback" type="lizun.dto.FeedbackDto"></parameterMap>
 
-    <insert id="insertNew" parameterType="lizun.dto.FeedbackDto">
+    <select id="insertNew" parameterType="lizun.dto.FeedbackDto" resultType="java.lang.Integer">
         insert into feedback(id_order,mark,comment)
         values(#{feedback.order},#{feedback.mark},#{feedback.comment});
-    </insert>
+        select id from feedback where id=currval(pg_get_serial_sequence('feedback', 'id'));
+    </select>
 
 </mapper>

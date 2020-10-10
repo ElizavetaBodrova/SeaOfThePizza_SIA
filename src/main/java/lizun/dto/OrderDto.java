@@ -12,6 +12,15 @@ public class OrderDto {
    private List<Integer> numberOfDish;
    private TypeOfDelivery typeOfDelivery;
    private Point point;
+   private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public List<Dish> getOrder() {
         return order;
