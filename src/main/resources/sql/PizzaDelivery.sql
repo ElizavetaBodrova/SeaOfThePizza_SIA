@@ -21,9 +21,9 @@ CREATE TABLE DISH (
 
 
 CREATE TABLE ORDER_DISH (
-	ID_order INTEGER NOT NULL,
-	ID_dish INTEGER NOT NULL,
-	Count integer NOT NULL
+	ID_order INTEGER ,
+	ID_dish INTEGER ,
+	Count integer
 ) WITH (
   OIDS=FALSE
 );

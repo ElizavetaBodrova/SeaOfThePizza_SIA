@@ -7,13 +7,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService {
 
-    private OrderMapper orderMapper;
+    private final OrderMapper orderMapper;
 
-    public OrderService(OrderMapper orderMapper){
-        this.orderMapper=orderMapper;
+    public OrderService() {
+        orderMapper=null;
     }
 
-    public boolean addOrder(OrderDto orderDto){
-        return orderMapper.insertNewOrder(orderDto);
+    public OrderService(OrderMapper orderMapper) {
+        this.orderMapper = orderMapper;
+    }
+
+    public Integer addOrder(OrderDto orderDto) {
+        Integer id = orderMapper.insertNewOrder(
+                orderDto.getOrder(),
+                orderDto.getNumberOfDish(),
+                orderDto.getTypeOfDelivery(),
+                orderDto.getPoint(),
+                orderDto.getPhone());
+        return id;
     }
 }

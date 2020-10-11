@@ -24,7 +24,7 @@ public class Dish {
     private String name;
     @Column(name = "Price")
     private Integer price;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "ID_group")
     private TypeOfDish group;
 
