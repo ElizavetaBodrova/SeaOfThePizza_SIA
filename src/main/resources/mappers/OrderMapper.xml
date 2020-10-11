@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lizun.mappers.OrderMapper">
+
+    <select id="isOrderExist" resultType="lizun.model.Order">
+        select *
+        from "order" o
+
+        where o.id = #{id}
+          and o.phone_client = #{phone};
+    </select>
+
+    <resultMap id="order" type="lizun.dto.OrderDto"
+               autoMapping="true">
+        <result property="phone" column="phone_client"/>
+        <association property="point" column="id_point" javaType="lizun.model.Point">
+            <id property="id" column="id"/>
+            <result property="phone" column="phone"/>
+            <result property="address" column="adress"/>
+        </association>
+        <association property="typeOfDelivery" column="id_type" javaType="lizun.model.TypeOfDelivery">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+        </association>
+        <collection property="order" ofType="lizun.model.Dish" autoMapping="true">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+            <result property="price" column="price"/>
+            <association property="group" column="id_group" javaType="lizun.model.TypeOfDish" autoMapping="true"/>
+            <!--<id property="id" column="id"/>
+            <result property="name" column="name"/>
+        </association>-->
+        </collection>
+        <collection property="numberOfDish" ofType="java.util.List" autoMapping="true">
+
+        </collection>
+    </resultMap>
+    <select id="insertNewOrder" resultType="java.lang.Integer">
+        insert into "order"(phone_client, id_type, id_point)
+        values(#{phone},#{type.id} ,#{point.id});
+
+        <foreach collection="order" index="indexO" item="order" separator="">
+
+            insert into order_dish (id_order) values
+            (
+            currval(pg_get_serial_sequence('order', 'id'))
+            )
+            ;
+                update order_dish set
+                id_dish=${order.id}
+                where id_order= currval(pg_get_serial_sequence('order', 'id')) and id_dish is null ;
+                <foreach collection="count" index="indexC" item="count" separator="">
+
+                update order_dish set
+                count=${count}
+                where id_order= currval(pg_get_serial_sequence('order', 'id')) and id_dish=${order.id} and #{indexC}=#{indexO};
+
+
+            </foreach>
+        </foreach>
+
+
+        select id from "order" where id=currval(pg_get_serial_sequence('order', 'id'));
+
+    </select>
+
+    <select id="findLastOrder" resultMap="order">
+        SELECT O.ID, OD.id_dish, OD.count
+        FROM "order" O
+                 JOIN ORDER_DISH OD ON O.ID = OD.ID_ORDER
+        where OD.id_order = currval(pg_get_serial_sequence('order', 'id'));
+
+    </select>
+
+
+</mapper>

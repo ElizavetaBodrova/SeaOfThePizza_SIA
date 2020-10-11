@@ -4,12 +4,10 @@
 
 <mapper namespace="lizun.mappers.DishMapper">
     <resultMap id="dish" type="lizun.model.Dish" autoMapping="true">
-        <association property="group"
-                     column="id_group"
-                     javaType="lizun.model.TypeOfDish" autoMapping="true">
-            <id property="id" column="GROUP_ID"/>
-            <result property="name" column="GROUP_NAME"/>
-        </association>
+            <association property="group" column="id_group" javaType="lizun.model.TypeOfDish" >
+            <id property="id" column="id"   />
+            <result property="name" column="name"/>
+            </association>
     </resultMap>
 
     <select id="getDishByGroupName" resultType="lizun.model.Dish">
@@ -17,8 +15,8 @@
                D.name,
                D.price,
                D.id_group,
-               GD.id AS GROUP_ID,
-               GD.name AS GROUP_NAME
+               GD.id "group.id",
+               GD.name "group.name"
         FROM DISH D
                  JOIN GROUPS_DISH GD ON GD.ID = D.ID_GROUP
         WHERE GD.NAME = #{groupName}
