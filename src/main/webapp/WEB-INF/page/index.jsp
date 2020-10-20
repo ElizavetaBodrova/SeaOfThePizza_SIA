@@ -62,11 +62,14 @@
             <div class="col-md-1.5"><input class="button" type="button" value="Напитки"
                                            onclick="findById('drink')"></div>
             <div class="col-md-2.5">
-                <div style="width: 200px; height: 15px"></div>
+                <div style="width: 100px; height: 15px"></div>
             </div>
 
             <div class="col-md-5.5"><input class="buttonOrder" type="button" value="Корзина"
-                                           onclick="location.href='cart'"/></div>
+                                           onclick="location.href='cart'"/>
+
+                <button id="clear_cart" class="button">Очистить</button>
+            </div>
 
         </div>
 

@@ -20,6 +20,7 @@ function sendCustomer() {
         data: JsonData,
         success: function (data) {
             if(data){//create new div element
+                localStorage.setItem('customer',JsonData);
                 let result=document.getElementById("identification");
                 let div = document.createElement("div");
                 div.innerHTML="\u041f\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u0435\u043c\u002c\u0020\u043d\u0430\u0448\u0020\u043b\u044e\u0431\u0438\u043c\u044b\u0439\u0020\u0433\u043e\u0441\u0442\u044c\ud83d\ude0a\ud83c\udf55";

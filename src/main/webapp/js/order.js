@@ -1,10 +1,10 @@
 ﻿window.addEventListener("load", function () {
-    localStorage.removeItem('cart');
-    localStorage.removeItem('number');
+    /*localStorage.removeItem('cart');
+    localStorage.removeItem('number');*/
+    console.log(localStorage.getItem('cart'));
     var d = document,
-        itemBox = d.querySelectorAll('.item_box');
-    console.log(itemBox);// блок каждого товара
-    //cartCont = d.getElementById('cart_content'); // блок вывода данных корзины
+        itemBox = d.querySelectorAll('.item_box');// блок каждого товара
+    cartCont = d.getElementById('cart_content'); // блок вывода данных корзины
 // Функция кроссбраузерной установка обработчика событий
     function addEvent(elem, type, handler) {
         if (elem) {
@@ -45,7 +45,7 @@
     function addToCart(e) {
         this.disabled = true;
         console.log(this.parentNode.parentNode);// блокируем кнопку на время операции с корзиной
-        let cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
+        let cartData = getCartData() || [], // получаем данные корзины или создаём новый объект, если данных еще нет
             parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
             itemId = this.getAttribute('data-id'), // ID товара
             itemTitle = parentBox.parentNode.querySelector('.title').getElementsByTagName('h1')[0].innerHTML, // название товара
@@ -53,7 +53,7 @@
             itemGroup = parentBox.parentNode.parentNode.parentNode.getAttribute('data-group');
         console.log(itemId + " " + itemTitle + " " + itemPrice + " " + itemGroup);
         let number = getNumber() || {};
-        if (cartData.hasOwnProperty(itemId)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
+        if (cartData.hasOwnProperty(itemId) && cartData[itemId]!==null) { // если такой товар уже в корзине, то добавляем +1 к его количеству
             number[itemId] += 1;
         } else { // если товара в корзине еще нет, то добавляем в объект
             cartData[itemId] = {
@@ -77,22 +77,29 @@
     for (var i = 0; i < itemBox.length; i++) {
         addEvent(itemBox[i].querySelector('.add'), 'click', addToCart);
     }
-    /*
     // Открываем корзину со списком добавленных товаров
     function openCart(e){
-        var cartData = getCartData(), // вытаскиваем все данные корзины
+        let cartData = getCartData(), numbers=getNumber(), // вытаскиваем все данные корзины
             totalItems = '';
+        console.log(cartData);
         // если что-то в корзине уже есть, начинаем формировать данные для вывода
         if(cartData !== null){
-            totalItems = '<table class="shopping_list"><tr><th>Наименование</th><th>Цена</th><th>Кол-во</th></tr>';
-            for(var items in cartData){
-                totalItems += '<tr>';
-                for(var i = 0; i < cartData[items].length; i++){
-                    totalItems += '<td>' + cartData[items][i] + '</td>';
+            totalItems = '<table class="shopping_list">';
+            for(let i=1;i<cartData.length;i++){
+                if(cartData[i]!==null){
+                    totalItems += '<tr>';
+                    totalItems += '<td>' + cartData[i]['name'] + '</td>'+
+                        '<td>' + cartData[i]['price']+ '</td>'+
+                        '<td>' + numbers[cartData[i]['id']] + '</td>';
+
+                    totalItems += '</tr>';
                 }
-                totalItems += '</tr>';
+
+
+
             }
             totalItems += '</table>';
+
             cartCont.innerHTML = totalItems;
         } else {
             // если в корзине пусто, то сигнализируем об этом
@@ -100,11 +107,12 @@
         }
         return false;
     }
-    /!* Открыть корзину *!/
+    /* Открыть корзину */
     addEvent(d.getElementById('checkout'), 'click', openCart);
-    /!* Очистить корзину *!/
+    /* Очистить корзину */
     addEvent(d.getElementById('clear_cart'), 'click', function(e){
         localStorage.removeItem('cart');
-        cartCont.innerHTML = 'Корзина очишена.';
-    });*/
+        localStorage.removeItem('number');
+        alert("\u041a\u043e\u0440\u0437\u0438\u043d\u0430\u0020\u043e\u0447\u0438\u0449\u0435\u043d\u0430\u002e");
+    });
 })

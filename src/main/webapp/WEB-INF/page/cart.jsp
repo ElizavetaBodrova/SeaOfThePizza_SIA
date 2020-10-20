@@ -60,7 +60,9 @@
             </div>
 
             <div class="col-md-5.5"><input class="buttonOrder" type="button" value="Корзина"
-                                           onclick="location.href='cart'"/></div>
+                                           onclick="location.href='cart'"/>
+                <button id="clear_cart" class="button">Очистить</button>
+            </div>
 
         </div>
 
@@ -68,7 +70,10 @@
 
 </div>
 
-<div class="container-fluid"></div>
+<div class="container-fluid">
+    <button id="checkout">Оформить заказ</button>
+    <div id="cart_content"></div>
+</div>
 <div class="container-fluid">
     <h1 class="centerh">Добавьте отзыв про свой заказ</h1>
 
