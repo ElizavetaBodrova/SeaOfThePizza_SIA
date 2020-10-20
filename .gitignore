@@ -1,2 +1,7 @@
 /.idea/
 /target/
+.idea/dataSources.xml
+.idea/sqldialects.xml
+.idea/jsLibraryMappings.xml
+.idea/.gitignore
+*.iml

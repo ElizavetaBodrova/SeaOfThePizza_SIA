@@ -10,6 +10,7 @@ import java.util.List;
 public interface DishMapper {
 
     List<Dish> getDishByGroupName(@Param("groupName") String groupName);
+    Integer getIdDishByNameAndByGroupName(@Param("name") String name,@Param("group") Integer group);
 
 
 }
