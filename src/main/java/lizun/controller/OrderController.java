@@ -14,17 +14,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class OrderController {
     private OrderService orderService;
+
     @Autowired
-    public OrderController(OrderService orderService){
-        this.orderService=orderService;
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
     }
 
     @ResponseBody
     @RequestMapping(value = "/order", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Integer addOrder(@RequestBody OrderDto orderDto){
-        System.out.println(orderDto.getPhone()+" "+orderDto.getOrder().get(0).getName());
+    public Integer addOrder(@RequestBody OrderDto orderDto) {
+
         return orderService.addOrder(orderDto);
     }
 }

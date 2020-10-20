@@ -22,4 +22,8 @@
         WHERE GD.NAME = #{groupName}
     </select>
 
+    <select id="getIdDishByNameAndByGroupName" resultType="java.lang.Integer">
+        select id from dish where name=#{name} and id_group=#{group};
+    </select>
+
 </mapper>
