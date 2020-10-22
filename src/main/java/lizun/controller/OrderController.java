@@ -25,7 +25,7 @@ public class OrderController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Integer addOrder(@RequestBody OrderDto orderDto) {
-
+      //  System.out.println(orderDto.getTypeOfDelivery().getId());
         return orderService.addOrder(orderDto);
     }
 }

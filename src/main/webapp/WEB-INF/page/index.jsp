@@ -41,13 +41,12 @@
             <div><p>88005553535</p></div>
             <div style="width: 400px; height: 30px"></div>
             <div id="identification">
-                <input autocomplete="username" data-mask="(999) 999-9999" type="text"
+                <input autocomplete="username" type="text"
                        placeholder="Введите ваш телефон" id="_phone" required="required">
                 <input autocomplete="current-password" type="password"
                        id="_password" placeholder="Введите пароль" required="required">
                 <button style="height: 20px"
-                        onclick="sendCustomer()" class="buttonOrder">
-                    <i class="icon-enter position-left"></i> Войти
+                        onclick="sendCustomer()" class="buttonOrder"> Войти
                 </button>
             </div>
         </div>
