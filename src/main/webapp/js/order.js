@@ -122,7 +122,7 @@
                     totalPrice += cartData[i]['price'] * numbers[cartData[i]['id']];
                 }
             }
-            totalItems += '<tr><h1>Итого:' + totalPrice + '</h1></tr> ' + '</table>';
+            totalItems += '<tr><td><h1>ИТОГО:' + totalPrice + '</h1></td></tr> ' + '</table>';
             cartCont.innerHTML = totalItems;
             let deleteItem = d.querySelectorAll('.x'),
                 plusItem = d.querySelectorAll('.plus'),
@@ -134,6 +134,14 @@
                     let id = e.target.id;
                     numbers[id] = null;
                     cart[id] = null;
+
+                    let price=JSON.parse(e.target.parentNode.parentNode.children[3].innerHTML.slice(0,-1)),
+                        count=JSON.parse(e.target.parentNode.parentNode.children[5].innerHTML);
+                   let totalPriceID=e.target.parentNode.parentNode.parentNode.getElementsByTagName("tr"),
+                       totalPrice=totalPriceID[totalPriceID.length-1];
+                   let newPrice=JSON.parse(totalPrice.innerText.slice(6))-price*count;
+                   totalPrice.innerHTML="<h1>ИТОГО:"+newPrice+"</h1>";
+
                     setNumber(numbers);
                     setCartData(cart);
                     document.getElementById(id).outerHTML = '';
@@ -150,6 +158,12 @@
                         numbers[id] -= 1;
                         setNumber(numbers);
 
+                        let price=JSON.parse(e.target.parentNode.parentNode.children[3].innerHTML.slice(0,-1));
+                        let totalPriceID=e.target.parentNode.parentNode.parentNode.getElementsByTagName("tr"),
+                            totalPrice=totalPriceID[totalPriceID.length-1];
+                        let newPrice=JSON.parse(totalPrice.innerText.slice(6))-price;
+                        totalPrice.innerHTML="<h1>ИТОГО:"+newPrice+"</h1>";
+
                         document.getElementById(id).getElementsByTagName("td")[5].innerHTML = numbers[id];
                         console.log(numbers);
                     }
@@ -164,6 +178,13 @@
                         console.log(e.target.id);
                         numbers[id] += 1;
                         setNumber(numbers);
+
+                        let price=JSON.parse(e.target.parentNode.parentNode.children[3].innerHTML.slice(0,-1));
+                        let totalPriceID=e.target.parentNode.parentNode.parentNode.getElementsByTagName("tr"),
+                            totalPrice=totalPriceID[totalPriceID.length-1];
+                        let newPrice=JSON.parse(totalPrice.innerText.slice(6))+price;
+                        totalPrice.innerHTML="<h1>ИТОГО:"+newPrice+"</h1>";
+
                         document.getElementById(id).getElementsByTagName("td")[5].innerHTML = numbers[id];
                         console.log(numbers);
                     }
