@@ -1,12 +1,12 @@
 package lizun.service;
 
 import lizun.dto.OrderDto;
+import lizun.dto.OrdersDto;
 import lizun.mappers.DishMapper;
 import lizun.mappers.OrderMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
+import java.util.*;
 
 @Service
 public class OrderService {
@@ -15,7 +15,7 @@ public class OrderService {
     private final DishMapper dishMapper;
 
 
-    @Autowired
+
     public OrderService(OrderMapper orderMapper, DishMapper dishMapper) {
         this.orderMapper = orderMapper;
         this.dishMapper = dishMapper;
@@ -39,5 +39,11 @@ public class OrderService {
                 orderDto.getPoint(),
                 orderDto.getPhone());
         return id;
+    }
+
+    public List<OrdersDto> getLastOrderByIDCustomer(String phone){
+        ArrayList<OrdersDto> orders=orderMapper.findLastOrderByCustomersPhone(phone);
+
+        return orders;
     }
 }

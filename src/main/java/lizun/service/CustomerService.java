@@ -9,23 +9,25 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
 
-    private CustomerMapper customerMapper;
+    private final CustomerMapper customerMapper;
 
+
+    @Autowired
     public CustomerService(CustomerMapper customerMapper) {
         this.customerMapper = customerMapper;
     }
 
     public boolean setNewCustomer(Customer customer) {
 
-        boolean state=false;
+        boolean state = false;
         Customer existCostumer = customerMapper.getCustomerByPhone(customer.getPhone());
         if (existCostumer != null) {
-            if(existCostumer.getPassword().equals(customer.getPassword()) ){
-                state=true;
+            if (existCostumer.getPassword().equals(customer.getPassword())) {
+                state = true;
             }
         } else {
             customerMapper.setNewCustomer(customer);
-            state=true;
+            state = true;
         }
         return state;
 

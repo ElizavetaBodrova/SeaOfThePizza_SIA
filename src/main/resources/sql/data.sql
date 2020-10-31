@@ -34,6 +34,8 @@ VALUES ('Пеперони', 395, 1),
        ('Sprite 0,5л',119,4),
        ('BonAqua 0,5л',59,4);
 
+
+
 INSERT INTO "order"(PHONE_CLIENT, ID_TYPE, ID_POINT)
 VALUES ('8003553535', 1, 1),
        ('8003553535', 2, 1),

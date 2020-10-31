@@ -53,7 +53,6 @@
             <div style="width: 53px; height: 55px"></div>
             <div class="col-md-3"><h1><a href="<c:url value="/"/>">Море Пиццы</a></h1></div>
             <div class="col-md-1.5"></div>
-            <!--добавить привязку по тегу/ add tags -->
             <div class="col-md-1.5"></div>
             <div class="col-md-1.5"></div>
             <div class="col-md-2.5">
@@ -77,6 +76,11 @@
     <div style="height: 50px"></div>
     <input type="button" class="buttonOrder" value="Начать оформлять заказ" id="order">
     <div id="order_content"></div>
+    <div style="height: 50px"></div>
+</div>
+<div class="container-fluid">
+    <div style="height: 50px"></div>
+    <div id="lastOrder"></div>
     <div style="height: 50px"></div>
 </div>
 <div class="container-fluid">

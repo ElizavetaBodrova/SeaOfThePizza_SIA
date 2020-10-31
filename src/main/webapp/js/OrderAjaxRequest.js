@@ -66,7 +66,7 @@
                 localStorage.removeItem('cart');
                 localStorage.removeItem('number');
                 window.location.reload();
-                console.log(data);
+                console.log("\u041d\u043e\u043c\u0435\u0440\u0020\u0432\u0430\u0448\u0435\u0433\u043e\u0020\u0437\u0430\u043a\u0430\u0437\u0430\u0020"+data);
 
             },
             error: function (e) {
@@ -77,13 +77,29 @@
 
     }
     else{
-        alert("")
+        alert("Данные не корректны")
     }
 
 }
 
 function orderCorrect(order,phone,typeofDelivery,point){
     return order!==null && phone!=="" && typeofDelivery!==null && point !==null
+}
+function getLastOrders(phone,orders){
+    $.ajax({
+        method: 'POST',
+        dataType: 'JSON',
+        contentType: 'application/json',
+        url: 'lastOrder',
+        data:phone,
+        success: function (data) {
+        drawOrders(data);
+
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    })
 }
 
 
