@@ -15,4 +15,9 @@ public class MainController {
     public String cart() {
         return "cart";
     }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String admin() {
+        return "admin";
+    }
 }

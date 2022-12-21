@@ -1,7 +1,5 @@
 package lizun.dto;
 
-import javax.persistence.Column;
-
 public class FeedbackDto {
     private Integer order;
     private String phone;
@@ -25,7 +23,6 @@ public class FeedbackDto {
     }
 
 
-
     public Integer getMark() {
         return mark;
     }
@@ -41,4 +38,5 @@ public class FeedbackDto {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
 }

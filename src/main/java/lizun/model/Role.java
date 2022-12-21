@@ -1,6 +1,9 @@
 package lizun.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,14 +14,16 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "GROUPS_DISH")
-public class TypeOfDish {
-
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "ROLE")
+public class Role {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
     public Integer getId() {
@@ -36,5 +41,4 @@ public class TypeOfDish {
     public void setName(String name) {
         this.name = name;
     }
-
 }

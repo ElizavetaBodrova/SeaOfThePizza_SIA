@@ -1,9 +1,9 @@
 ﻿window.addEventListener("load", function () {
-        console.log(JSON.parse(localStorage.getItem('customer')));
-        if (JSON.parse(localStorage.getItem('customer'))) {
+        console.log(JSON.parse(localStorage.getItem('user')));
+        if (JSON.parse(localStorage.getItem('user'))) {
             customerLog();
         } else {
-            clear();
+          //  clear();
         }
         let d = document,
             itemBox = d.querySelectorAll('.item_box');// блок каждого товара
@@ -211,7 +211,8 @@
         for (var i = 0; i < itemBox.length; i++) {
             addEvent(itemBox[i].querySelector('.add'), 'click', addToCart);
         }
-
+        //get customers
+        //addEvent(d.getElementById("get_customers"),'click',getAdminPage());
         //exit customer
         addEvent(d.getElementById('clear_customer'), 'click', clear);
         /* Открыть корзину */
@@ -227,8 +228,8 @@
         addEvent(d.getElementById("lastOrder"), 'click', showLastOrders());
 
         function showLastOrders() {
-            if (JSON.parse(localStorage.getItem('customer'))) {
-                getLastOrders(JSON.parse(localStorage.getItem('customer')).phone);
+            if (JSON.parse(localStorage.getItem('user'))) {
+                getLastOrders(JSON.parse(localStorage.getItem('user')).phone);
 
             }
         }
@@ -237,7 +238,8 @@
         //начать оформлять заказ
         addEvent(d.getElementById('order'), 'click', function (e) {
 
-            let form = '<div style="height: 50px"></div> <div style="margin-left: 30%"><h1> Телефон: 8<input id="phoneOrder" type="text" size="10"></div><div style="height: 50px"></h1></div>' +
+            let form = '<div style="height: 50px"></div> <div style="margin-left: 30%"><h1> Телефон: 8' +
+                '<input id="phoneOrder" type="text" size="10"></div><div style="height: 50px"></h1></div>' +
                 '<div style="margin-left: 30%" id="del"> ' +
                 '<h1 style="margin-left: 30%">Тип Доставки:</h1>' +
                 '<h1><input type="radio" name="delivery" id="2">Курьером</h1>' +
@@ -263,10 +265,8 @@
 
         })
 
-
     }
 )
-
 
 function checkMaxItem(item) {
     switch (item) {
@@ -304,7 +304,8 @@ function drawOrders(data) {
             elem += '</tr>';
             let id = data[i]['id'];
             if (i !== data.length - 1 && id !== data[i + 1]['id']) {
-                elem += '<tr style="background: #1959d1; color:#1959d1;"> <td> here</td><td>here </td><td>here </td> <td> here</td><td>here </td><td>here </td><td>here </td></tr>';
+                elem += '<tr style="background: #1959d1; color:#1959d1;"> <td> here</td><td>here </td><td>here' +
+                    ' </td> <td> here</td><td>here </td><td>here </td><td>here </td></tr>';
             }
         }
         elem += '</table>';

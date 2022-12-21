@@ -6,7 +6,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Data
 @Entity
@@ -14,7 +21,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "CUSTOMER")
-
 public class Customer {
     @Id
     @Column(name = "ID")
@@ -22,8 +28,32 @@ public class Customer {
     private Integer id;
     @Column(name = "Phone")
     private String phone;
-    @Column(name = "Password")
-    private String password;
+    @Column(name = "key")
+    private String key;
+    @Column(name = "iv")
+    private String iv;
+    @OneToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+    @OneToOne
+    @JoinColumn(name = "id_role")
+    private Role role;
+
+    public String getIv() {
+        return iv;
+    }
+
+    public void setIv(String iv) {
+        this.iv = iv;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public Integer getId() {
         return id;
@@ -41,11 +71,19 @@ public class Customer {
         this.phone = phone;
     }
 
-    public String getPassword() {
-        return password;
+    public User getUser() {
+        return user;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

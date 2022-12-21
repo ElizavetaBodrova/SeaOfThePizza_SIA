@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface OrderMapper {
-    Order isOrderExist(@Param("id") Integer id, @Param("phone") String phone);
+
+    Order isOrderExist(@Param("id") Integer id, @Param("id_customer") Integer id_customer);
 
     Integer insertNewOrder(@Param("order") List<Dish> order, @Param("count") List<Integer> numberOfDish,
                            @Param("type") TypeOfDelivery typeOfDelivery, @Param("point") Point point,
-                           @Param("phone")String phone);
+                           @Param("customerId")Integer customerId);
     ArrayList<OrdersDto> findLastOrderByCustomersPhone(@Param("phone")String phone);
 }

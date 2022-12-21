@@ -28,6 +28,13 @@
     <script type="text/javascript">
         <%@include file="/js/init.js"%>
     </script>
+    <script type="text/javascript">
+        <%@include file="/js/AdminCustomersAjaxRequest.js"%>
+    </script>
+    <script type="text/javascript">
+        <%@include file="/js/admin.js"%>
+    </script>
+
 </head>
 <body>
 <div id="headerMain">
@@ -36,7 +43,10 @@
         <div class="row" id="phone">
             <div style="width: 100px; height: 30px"></div>
             <div><p>88005553535</p></div>
-            <div style="width: 400px; height: 30px"></div>
+            <div style="width: 200px; height: 30px"></div>
+            <div id="admin">
+            </div>
+            <div style="width: 50px; height: 30px"></div>
             <div id="identification">
                 <input autocomplete="username" data-mask="(999) 999-9999" type="text"
                        placeholder="Введите ваш телефон" id="_phone" required="required">
@@ -63,6 +73,7 @@
                                            onclick="location.href='cart'"/>
                 <button id="clear_cart" class="button">Очистить</button>
             </div>
+
 
         </div>
 
@@ -148,7 +159,7 @@
     </tr>
 </table>
 <div class="footer"> &nbsp;Moре пиццы ©
-    <br></br>2020
+    <br></br>2022
 </div>
 </body>
 </html>

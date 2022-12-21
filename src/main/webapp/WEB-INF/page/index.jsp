@@ -6,7 +6,8 @@
 
     <meta charset="WINDOWS-1251">
     <%--<meta charset="utf-8 with BOM">--%>
-    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/img/pizza.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="${pageContext.request.contextPath}/img/pizza.png">
     <title>🍕Море пиццы🍕</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
@@ -27,6 +28,13 @@
     <script type="text/javascript">
         <%@include file="/js/order.js"%>
     </script>
+
+    <script type="text/javascript">
+        <%@include file="/js/admin.js"%>
+    </script>
+    <script type="text/javascript">
+        <%@include file="/js/AdminCustomersAjaxRequest.js"%>
+    </script>
     <script type="text/javascript">
         <%@include file="/js/init.js"%>
     </script>
@@ -34,12 +42,15 @@
 
 <body>
 <div id="headerMain">
-
     <div id="header">
         <div class="row" id="phone">
             <div style="width: 100px; height: 30px"></div>
             <div><p>88005553535</p></div>
-            <div style="width: 400px; height: 30px"></div>
+            <div style="width: 200px; height: 30px"></div>
+            <div id="admin"><%--<input class="buttonOrder" type="button" value="Пользователи"
+                                           onclick="location.href='admin'"/>--%>
+            </div>
+            <div style="width: 50px; height: 30px"></div>
             <div id="identification">
                 <input autocomplete="username" type="text"
                        placeholder="Введите ваш телефон" id="_phone" required="required">
@@ -66,15 +77,11 @@
 
             <div class="col-md-5.5"><input class="buttonOrder" type="button" value="Корзина"
                                            onclick="location.href='cart'"/>
-
                 <button id="clear_cart" class="button">Очистить</button>
             </div>
 
         </div>
-
     </div>
-
-
 </div>
 
 <div class="container-fluid">
@@ -372,7 +379,7 @@
         <div style="height: 50px"></div>
     </div>
 </div>
-<table>
+<%--<table>
     <tr>
         <th colspan="2">
             <div style="width:300px"></div>
@@ -400,12 +407,10 @@
             </div>
         </td>
     </tr>
-</table>
-
+</table>--%>
 
 <div class="footer"> &nbsp;Moре пиццы ©
-    <br></br>2020
+    <br></br>2022
 </div>
-
 </body>
 </html>

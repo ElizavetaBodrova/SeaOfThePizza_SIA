@@ -30,19 +30,14 @@ function getFeedbaks() {
                         stars = "\u2b50\u2b50\u2b50\u2b50\u2b50";
                         break;
                     }
-
                 }
                 div.innerHTML = results[i]['comment'] + "  " + stars;
                 feedbacks.appendChild(div);
-
             }
-
             console.log("success");
-
         },
         error: function (e) {
             console.log(e);
-
         }
     })
 }
@@ -68,10 +63,7 @@ function setFeedbacks() {
                 mark: mark,
                 comment: comment
             }
-
-
         let JsonData = JSON.stringify(SendData);
-
         $.ajax({
             method: 'POST',
             dataType: 'JSON',
@@ -87,16 +79,12 @@ function setFeedbacks() {
                 else{
                     alert("\u0421\u043f\u0430\u0441\u0438\u0431\u043e\u0020\u0437\u0430\u0020\u043e\u0442\u0437\u044b\u0432\u0021");
                 }
-
             },
             error: function (e) {
                 console.log(e);
-
             }
         })
     } else {
         alert("\u0424\u043e\u0440\u043c\u0430\u0020\u043d\u0435\u0020\u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0430");
     }
-
-
 }

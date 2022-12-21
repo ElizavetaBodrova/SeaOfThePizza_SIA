@@ -9,6 +9,11 @@ INSERT INTO POINT(ADRESS, PHONE)
 VALUES ('Станкевича 3', '8005553535'),
        ('Хользунова 50', '8005553535');
 
+INSERT INTO role(name)
+VALUES ('VISITOR'),
+       ('CUSTOMER'),
+       ('ADMIN');
+
 INSERT INTO TYPE_DELIVERY(NAME)
 VALUES ('Самовывоз'),
        ('Курьером'),
@@ -35,18 +40,20 @@ VALUES ('Пеперони', 395, 1),
        ('BonAqua 0,5л',59,4);
 
 
+/*INSERT INTO "customer"(PHONE, PASSWORD, ISADMIN)
+VALUES ('8003553535',null,false);
 
-INSERT INTO "order"(PHONE_CLIENT, ID_TYPE, ID_POINT)
-VALUES ('8003553535', 1, 1),
-       ('8003553535', 2, 1),
-       ('8003553535', 3, 1),
-       ('8003553535', 3, 1),
-       ('8003553535', 3, 1),
-       ('8003553535', 1, 2),
-       ('8003553535', 2, 2),
-       ('8003553535', 3, 2),
-       ('8003553535', 3, 2),
-       ('8003553535', 3, 2);
+INSERT INTO "order"(id_customer, ID_TYPE, ID_POINT)
+VALUES (1, 1, 1),
+       (1, 2, 1),
+       (1, 3, 1),
+       (1, 3, 1),
+       (1, 3, 1),
+       (1, 1, 2),
+       (1, 2, 2),
+       (1, 3, 2),
+       (1, 3, 2),
+       (1, 3, 2);
 
 INSERT INTO ORDER_DISH(ID_ORDER, ID_DISH, COUNT)
 VALUES (1, 1, 2),
@@ -79,3 +86,4 @@ VALUES (1, 1, 'Плохо'),
        (8, 3, 'Нормас'),
        (9, 4, 'Хорошечно'),
        (10, 5, 'Телепортировали прямо на кухню!');
+*/

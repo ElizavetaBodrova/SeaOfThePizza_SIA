@@ -9,7 +9,7 @@
         from "order" o
 
         where o.id = #{id}
-          and o.phone_client = #{phone};
+          and o.id_customer = #{id_customer};
     </select>
 
     <resultMap id="order" type="lizun.dto.OrderDto"
@@ -20,7 +20,8 @@
             <result property="phone" column="phone"/>
             <result property="address" column="adress"/>
         </association>
-        <association property="typeOfDelivery" column="id_type" javaType="lizun.model.TypeOfDelivery">
+        <association property="typeOfDelivery" column="id_type"
+                     javaType="lizun.model.TypeOfDelivery">
             <id property="id" column="id"/>
             <result property="name" column="name"/>
         </association>
@@ -28,15 +29,16 @@
             <id property="id" column="id"/>
             <result property="name" column="name"/>
             <result property="price" column="price"/>
-            <association property="group" column="id_group" javaType="lizun.model.TypeOfDish" autoMapping="true"/>
+            <association property="group" column="id_group" javaType="lizun.model.TypeOfDish"
+                         autoMapping="true"/>
         </collection>
         <collection property="numberOfDish" ofType="java.util.List" autoMapping="true">
 
         </collection>
     </resultMap>
     <select id="insertNewOrder" resultType="java.lang.Integer">
-        insert into "order"(phone_client, id_type, id_point)
-        values(#{phone},#{type.id} ,#{point.id});
+        insert into "order"(id_customer, id_type, id_point)
+        values(#{customerId},#{type.id} ,#{point.id});
 
         <foreach collection="order" index="indexO" item="order" separator="">
 
@@ -45,14 +47,15 @@
             currval(pg_get_serial_sequence('order', 'id'))
             )
             ;
-                update order_dish set
-                id_dish=${order.id}
-                where id_order= currval(pg_get_serial_sequence('order', 'id')) and id_dish is null ;
-                <foreach collection="count" index="indexC" item="count" separator="">
+            update order_dish set
+            id_dish=${order.id}
+            where id_order= currval(pg_get_serial_sequence('order', 'id')) and id_dish is null ;
+            <foreach collection="count" index="indexC" item="count" separator="">
 
                 update order_dish set
                 count=${count}
-                where id_order= currval(pg_get_serial_sequence('order', 'id')) and id_dish=${order.id} and #{indexC}=#{indexO};
+                where id_order= currval(pg_get_serial_sequence('order', 'id')) and
+                id_dish=${order.id} and #{indexC}=#{indexO};
 
 
             </foreach>
@@ -66,7 +69,7 @@
     <resultMap id="orders" type="lizun.dto.OrdersDto" autoMapping="true">
         <id column="id" property="id"/>
         <result property="count" column="count"/>
-        <association property="dish" column="name" javaType="lizun.model.Dish" >
+        <association property="dish" column="name" javaType="lizun.model.Dish">
             <id property="id" column="id"/>
             <result property="name" column="name"/>
             <result property="price" column="price"/>
@@ -74,12 +77,17 @@
     </resultMap>
 
     <select id="findLastOrderByCustomersPhone" resultType="lizun.dto.OrdersDto">
-        SELECT  O.id,D.name "dish.name", D.price "dish.price",D.id_group "dish.group.id",gd.name "dish.group.name", OD.count "count"
+        SELECT O.id,
+               D.name     "dish.name",
+               D.price    "dish.price",
+               D.id_group "dish.group.id",
+               gd.name    "dish.group.name",
+               OD.count   "count"
         FROM "order" O
                  JOIN ORDER_DISH OD ON O.ID = OD.ID_ORDER
-                join dish D on OD.id_dish = D.id
-                join groups_dish gd on D.id_group = gd.id
-        where O.phone_client=#{phone};
+                 join dish D on OD.id_dish = D.id
+                 join groups_dish gd on D.id_group = gd.id
+        where O.id_customer = (select c.id from customer c where c.phone=#{phone});
 
     </select>
 

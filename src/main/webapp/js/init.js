@@ -4,7 +4,7 @@ function init(){
 
     getFeedbaks();
     getPoints();
-   // createOrder();
+    //getCustomers();
 }
 function findById(data){
     let id=document.getElementById(data);

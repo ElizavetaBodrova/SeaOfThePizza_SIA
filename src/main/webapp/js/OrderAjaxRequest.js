@@ -1,4 +1,4 @@
-﻿function sendOrder() {//ajax request
+﻿function sendOrder() {
     let number = JSON.parse(localStorage.getItem('number')), cart = JSON.parse(localStorage.getItem('cart')),
         phone = document.getElementById("phoneOrder").value,
         idDelivery = document.getElementById("del").querySelectorAll("input");

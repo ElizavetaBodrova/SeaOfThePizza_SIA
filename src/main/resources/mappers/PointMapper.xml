@@ -11,6 +11,4 @@
         SELECT P.ADRESS "address",P.phone "phone" FROM POINT P;
     </select>
 
-
-
 </mapper>
